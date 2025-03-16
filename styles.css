@@ -189,9 +189,10 @@ header nav ul li a {
 }
 
 .service-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 0 20px;
 }
 
 .service-card {
@@ -306,10 +307,6 @@ footer {
     }
 
     .steps {
-        flex-direction: row;
-    }
-
-    .service-list {
         flex-direction: row;
     }
 }
