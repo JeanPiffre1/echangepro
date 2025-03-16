@@ -275,3 +275,44 @@ footer {
         flex-direction: row; /* Affiche les utilisateurs côte à côte sur les grands écrans */
     }
 }
+/* Menu Hamburger */
+.hamburger {
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Styles pour les écrans mobiles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Affiche le menu hamburger sur mobile */
+    }
+
+    .nav-links {
+        display: none; /* Cache les liens par défaut sur mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #000;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est activé */
+    }
+}
