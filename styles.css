@@ -10,7 +10,7 @@ body {
 header {
     background-color: #000;
     color: #fff;
-    padding: 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,14 +20,13 @@ header {
 }
 
 header .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 1.5rem; /* Taille relative */
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 header nav ul li a {
@@ -39,33 +38,34 @@ header nav ul li a {
 /* Hero Section */
 .hero {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Empile les éléments sur mobile */
     align-items: center;
-    padding: 100px 20px;
+    padding: 50px 20px;
     background-color: #000;
     color: #fff;
+    text-align: center;
 }
 
 .hero-content {
-    max-width: 50%;
+    max-width: 100%; /* Prend toute la largeur sur mobile */
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 2rem; /* Taille relative */
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 24px;
-    margin-bottom: 40px;
+    font-size: 1rem; /* Taille relative */
+    margin-bottom: 20px;
 }
 
 .hero .btn {
     background-color: #ff6f61;
     color: #fff;
-    padding: 15px 30px;
+    padding: 10px 20px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1rem;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -92,19 +92,19 @@ header nav ul li a {
 
 /* Présentation Section */
 .presentation {
-    padding: 60px 20px;
+    padding: 40px 20px;
     text-align: center;
     background-color: #fff;
 }
 
 .presentation h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
 .steps {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column; /* Empile les étapes sur mobile */
     gap: 20px;
 }
 
@@ -113,7 +113,6 @@ header nav ul li a {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 30%;
     transition: transform 0.3s ease;
 }
 
@@ -122,32 +121,32 @@ header nav ul li a {
 }
 
 .step i {
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 10px;
     color: #ff6f61;
 }
 
 .step h3 {
-    font-size: 24px;
+    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
 /* Section Échange */
 .exchange {
-    padding: 60px 20px;
+    padding: 40px 20px;
     background-color: #f4f4f9;
     text-align: center;
 }
 
 .exchange h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
 .exchange-example {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    flex-direction: column; /* Empile les utilisateurs sur mobile */
+    gap: 20px;
 }
 
 .user {
@@ -171,47 +170,47 @@ header nav ul li a {
 }
 
 .user h3 {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-bottom: 5px;
 }
 
 .user p {
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
 .exchange-result {
-    margin-top: 40px;
-    font-size: 20px;
+    margin-top: 20px;
+    font-size: 1.2rem;
     color: #ff6f61;
 }
 
 /* Section Mon Compte */
 .account {
-    padding: 60px 20px;
+    padding: 40px 20px;
     background-color: #fff;
     text-align: center;
 }
 
 .profile {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .profile img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .profile h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .profile p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 .profile .edit-profile {
@@ -234,7 +233,7 @@ header nav ul li a {
 
 .post-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Grille responsive */
     gap: 10px;
 }
 
@@ -254,5 +253,25 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
-    margin-top: 60px;
+    margin-top: 40px;
+}
+
+/* Media Queries pour les écrans plus larges */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row; /* Affiche les éléments côte à côte sur les grands écrans */
+        text-align: left;
+    }
+
+    .hero-content {
+        max-width: 50%;
+    }
+
+    .steps {
+        flex-direction: row; /* Affiche les étapes côte à côte sur les grands écrans */
+    }
+
+    .exchange-example {
+        flex-direction: row; /* Affiche les utilisateurs côte à côte sur les grands écrans */
+    }
 }
